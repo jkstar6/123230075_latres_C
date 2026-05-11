@@ -14,8 +14,8 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Kita panggil lagi AuthController untuk fungsi logout
-    final AuthController authController = Get.find<AuthController>();
+    // KOREKSI: Gunakan Get.put agar tidak crash saat aplikasi langsung dibuka ke halaman utama
+    final AuthController authController = Get.put(AuthController());
 
     return Scaffold(
       appBar: AppBar(title: const Text("Profile")),

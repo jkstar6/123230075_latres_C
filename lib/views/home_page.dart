@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../controllers/product_controller.dart';
 import 'detail_page.dart';
-// import 'cart_page.dart'; // Nanti kita buat
+import 'cart_page.dart';
 // import 'detail_page.dart'; // Nanti kita buat
 
 class HomePage extends StatelessWidget {
@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.shopping_cart),
             onPressed: () {
-              // Get.to(() => const CartPage());
+              Get.to(() => const CartPage());
             },
           ),
         ],

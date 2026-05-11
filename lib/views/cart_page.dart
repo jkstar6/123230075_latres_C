@@ -13,7 +13,7 @@ class CartPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text("Keranjang Saya")),
       body: Obx(() {
-        // Cek jika keranjang kosong
+        // Cek keranjang kosong
         if (cartController.cartItems.isEmpty) {
           return const Center(
             child: Text("Keranjangmu masih kosong", style: TextStyle(fontSize: 18)),
@@ -40,7 +40,7 @@ class CartPage extends StatelessWidget {
                 trailing: IconButton(
                   icon: const Icon(Icons.delete, color: Colors.red),
                   onPressed: () {
-                    // Panggil fungsi hapus dari controller
+                    // Panggil fungsi hapus
                     cartController.deleteItem(index);
                   },
                 ),

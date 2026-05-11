@@ -16,7 +16,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Inisialisasi controller di sini agar API langsung di-fetch
+    // Inisialisasi controller
     final ProductController productController = Get.put(ProductController());
 
     return Scaffold(
@@ -36,7 +36,7 @@ class HomePage extends StatelessWidget {
           ),
         ],
       ),
-      // Obx akan memantau isLoading dan productList
+
       body: Obx(() {
         if (productController.isLoading.value) {
           return const Center(child: CircularProgressIndicator());
@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
                   width: 50,
                   height: 50,
                   fit: BoxFit.cover,
-                  // Menangani jika gambar gagal dimuat
+                  // Menangani gambar
                   errorBuilder: (context, error, stackTrace) =>
                       const Icon(Icons.error),
                 ),
@@ -69,7 +69,6 @@ class HomePage extends StatelessWidget {
                 subtitle: Text("\$${product.price} | Stock: ${product.stock}"),
                 trailing: const Icon(Icons.arrow_forward_ios, size: 16),
                 onTap: () {
-                  // Sekarang sudah bisa diarahkan ke halaman detail
                   Get.to(() => DetailPage(product: product));
                 },
               ),

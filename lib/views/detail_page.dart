@@ -17,10 +17,8 @@ class DetailPage extends StatelessWidget {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String username = prefs.getString('username') ?? 'User';
 
-    // Ambil box dari main.dart
     var box = Hive.box<CartItem>('cartBox');
 
-    // Buat objek item baru
     var newItem = CartItem(
       username: username,
       productId: product.id,
@@ -61,11 +59,9 @@ class DetailPage extends StatelessWidget {
             Text(product.description),
             const Spacer(),
             
-            // Bagian Pengaturan Kuantitas & Tombol Add to Cart
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Kontrol Kuantitas
                 Row(
                   children: [
                     IconButton(

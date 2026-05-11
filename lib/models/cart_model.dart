@@ -18,10 +18,9 @@ class CartItem {
   });
 }
 
-// Ini adalah Adapter manual agar Hive mengenali class CartItem
 class CartItemAdapter extends TypeAdapter<CartItem> {
   @override
-  final int typeId = 0; // ID unik untuk model ini
+  final int typeId = 0;
 
   @override
   CartItem read(BinaryReader reader) {

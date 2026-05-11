@@ -4,13 +4,12 @@ import 'package:http/http.dart' as http;
 import '../models/product_model.dart';
 
 class ProductController extends GetxController {
-  // .obs membuat variabel ini reaktif (bisa dipantau perubahannya oleh UI)
   var isLoading = true.obs;
   var productList = <Product>[].obs;
 
   @override
   void onInit() {
-    fetchProducts(); // Otomatis dipanggil saat controller diinisialisasi
+    fetchProducts();
     super.onInit();
   }
 
@@ -24,7 +23,7 @@ class ProductController extends GetxController {
         // Decode JSON dari API
         var jsonString = json.decode(response.body);
         
-        // Ambil array 'products' dan ubah ke list of Product Model
+        // array ubah ke list of Product Model
         var products = jsonString['products'] as List;
         productList.value = products.map((e) => Product.fromJson(e)).toList();
       } else {
@@ -33,7 +32,7 @@ class ProductController extends GetxController {
     } catch (e) {
       Get.snackbar("Error", "Terjadi kesalahan: $e");
     } finally {
-      isLoading(false); // Matikan loading setelah selesai
+      isLoading(false);
     }
   }
 }

@@ -6,7 +6,7 @@ import '../controllers/auth_controller.dart';
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
 
-  // Fungsi untuk mengambil username dari SharedPreferences
+  // ambil username dari SharedPreferences
   Future<String> _getUsername() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     return prefs.getString('username') ?? 'User';

@@ -3,11 +3,10 @@ import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-// Import halaman dan model
 import 'controllers/auth_controller.dart';
 import 'views/login_page.dart';
 import 'views/main_page.dart';
-import 'models/cart_model.dart'; // Ini wajib ditambahkan agar Hive mengenali CartItem
+import 'models/cart_model.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,7 +16,6 @@ void main() async {
   Hive.registerAdapter(CartItemAdapter());
   await Hive.openBox<CartItem>('cartBox');
 
-  // --- TAMBAHKAN BARIS INI ---
   // Inisialisasi AuthController secara global
   Get.put(AuthController());
 
@@ -40,7 +38,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       debugShowCheckedModeBanner: false,
 
-      // Logika penentuan halaman awal
+      // halaman awal
       home: isLoggedIn ? const MainPage() : const LoginPage(),
     );
   }

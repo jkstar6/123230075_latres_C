@@ -11,14 +11,13 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final MainController mainController = Get.put(MainController());
 
-    // List halaman yang akan ditampilkan di dalam body
+    // List halaman body
     final List<Widget> pages = [
       const HomePage(),
       const ProfilePage(),
     ];
 
     return Scaffold(
-      // Obx akan membungkus widget yang state-nya berubah-ubah
       body: Obx(() => pages[mainController.selectedIndex.value]),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(

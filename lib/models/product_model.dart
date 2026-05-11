@@ -3,7 +3,7 @@ class Product {
   final String title;
   final String description;
   final double price;
-  final int stock; // Ini akan jadi totalQty nantinya
+  final int stock;
   final String thumbnail;
 
   Product({
@@ -15,13 +15,12 @@ class Product {
     required this.thumbnail,
   });
 
-  // Fungsi untuk memetakan JSON ke Model
+  // JSON ke Model
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
       id: json['id'],
       title: json['title'],
       description: json['description'],
-      // Kadang API mengembalikan int atau double untuk harga, kita pastikan jadi double
       price: json['price'].toDouble(), 
       stock: json['stock'],
       thumbnail: json['thumbnail'],

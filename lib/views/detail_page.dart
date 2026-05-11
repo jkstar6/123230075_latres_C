@@ -8,8 +8,7 @@ import '../models/cart_model.dart';
 class DetailPage extends StatelessWidget {
   final Product product;
 
-  // Kita inisialisasi variabel rx (reaktif) untuk kuantitas
-  // Nilai awal adalah 1, karena soal mensyaratkan 0 < qty <= totalQty
+  // Nilai awal = 1, karena 0 < qty <= totalQty
   DetailPage({super.key, required this.product});
 
   final RxInt qty = 1.obs;
@@ -18,7 +17,7 @@ class DetailPage extends StatelessWidget {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String username = prefs.getString('username') ?? 'User';
 
-    // Ambil box yang sudah kita buka di main.dart
+    // Ambil box dari main.dart
     var box = Hive.box<CartItem>('cartBox');
 
     // Buat objek item baru

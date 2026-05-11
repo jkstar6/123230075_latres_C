@@ -18,7 +18,7 @@ class LoginPage extends StatelessWidget {
             const Icon(Icons.shopping_bag, size: 100, color: Colors.blue),
             const SizedBox(height: 20),
             const Text(
-              "Toko Awikwok",
+              "Toko Awikshop",
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 30),

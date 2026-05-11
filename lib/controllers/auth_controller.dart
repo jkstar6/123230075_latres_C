@@ -8,7 +8,7 @@ class AuthController extends GetxController {
   final passwordController = TextEditingController();
 
   // Gantilah '123210001' dengan NIM asli kamu atau sesuaikan logikanya
-  final String correctPassword = "NIM_KAMU_DI_SINI"; 
+  final String correctPassword = "123230075"; 
 
   void login() async {
     String username = usernameController.text.trim();

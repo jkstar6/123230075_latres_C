@@ -7,8 +7,7 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Inisialisasi AuthController agar bisa digunakan di halaman ini
-    final AuthController authController = Get.put(AuthController());
+    final AuthController authController = Get.find<AuthController>();
 
     return Scaffold(
       body: Padding(

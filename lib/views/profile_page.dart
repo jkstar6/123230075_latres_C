@@ -14,8 +14,7 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // KOREKSI: Gunakan Get.put agar tidak crash saat aplikasi langsung dibuka ke halaman utama
-    final AuthController authController = Get.put(AuthController());
+    final AuthController authController = Get.find<AuthController>();
 
     return Scaffold(
       appBar: AppBar(title: const Text("Profile")),
@@ -40,7 +39,10 @@ class ProfilePage extends StatelessWidget {
                 const SizedBox(height: 20),
                 Text(
                   username,
-                  style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 const SizedBox(height: 20),
                 const Divider(),
@@ -56,11 +58,16 @@ class ProfilePage extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.red,
+                    ),
                     onPressed: () => authController.logout(),
-                    child: const Text("LOGOUT", style: TextStyle(color: Colors.white)),
+                    child: const Text(
+                      "LOGOUT",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
-                )
+                ),
               ],
             ),
           );

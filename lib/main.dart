@@ -4,7 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // Import halaman-halaman kamu di sini nanti
-// import 'view/login_page.dart';
+import 'views/login_page.dart';
 // import 'view/home_page.dart';
 
 void main() async {
@@ -39,9 +39,10 @@ class MyApp extends StatelessWidget {
       
       // 4. Logika penentuan halaman awal
       // Jika isLoggedIn true, ke HomePage, jika false ke LoginPage
+      // Ganti bagian home di GetMaterialApp:
       home: isLoggedIn 
-          ? const PlaceholderPage(title: "Halaman Utama (Sudah Login)") 
-          : const PlaceholderPage(title: "Halaman Login"),
+          ? const PlaceholderPage(title: "Halaman Utama") // Nanti ganti ke MainPage
+          : const LoginPage(),
     );
   }
 }

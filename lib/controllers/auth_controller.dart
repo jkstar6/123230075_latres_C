@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../views/login_page.dart';
+import '../views/main_page.dart';
+
 class AuthController extends GetxController {
   // Controller untuk menangkap input teks
   final usernameController = TextEditingController();
@@ -29,7 +32,7 @@ class AuthController extends GetxController {
       Get.snackbar("Success", "Selamat Datang, $username!");
       
       // Pindah ke halaman utama (kita akan buat nanti)
-      // Get.offAll(() => const MainPage()); 
+      Get.offAll(() => const MainPage()); 
     } else {
       Get.snackbar("Error", "Password harus menggunakan NIM kamu",
           snackPosition: SnackPosition.BOTTOM);
@@ -40,6 +43,6 @@ class AuthController extends GetxController {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.remove('username');
     // Kembali ke login dan hapus semua history navigasi
-    // Get.offAll(() => const LoginPage()); 
+    Get.offAll(() => const LoginPage()); 
   }
 }

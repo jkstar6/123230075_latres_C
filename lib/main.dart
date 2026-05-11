@@ -5,7 +5,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 // Import halaman-halaman kamu di sini nanti
 import 'views/login_page.dart';
-// import 'view/home_page.dart';
+import 'views/home_page.dart';
+import 'views/main_page.dart';
 
 void main() async {
   // 1. Memastikan binding framework Flutter sudah siap
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
       // Jika isLoggedIn true, ke HomePage, jika false ke LoginPage
       // Ganti bagian home di GetMaterialApp:
       home: isLoggedIn 
-          ? const PlaceholderPage(title: "Halaman Utama") // Nanti ganti ke MainPage
+          ? const MainPage()
           : const LoginPage(),
     );
   }

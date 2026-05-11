@@ -1,6 +1,6 @@
 # Latihan Responsi IF-C: Toko Awikshop 🛒
 
-**Oleh:** Bintang  
+**Oleh:** Bintang Jati Kesuma Subagyo
 **NIM:** 123230075
 **Kelas:** IF-C
 

@@ -47,11 +47,7 @@ class ProfilePage extends StatelessWidget {
                 const SizedBox(height: 20),
                 const Divider(),
                 const Text(
-                  "Kesan & Pesan:",
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                const Text(
-                  "Ini adalah deskripsi bebas sesuai permintaan soal responsi.",
+                  "Halo.",
                   textAlign: TextAlign.center,
                 ),
                 const Spacer(),
